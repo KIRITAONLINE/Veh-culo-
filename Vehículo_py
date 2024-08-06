@@ -1,0 +1,27 @@
+class Vehículo:
+    def __init__(self, marca, modelo, color, velocidad=0):
+        self.marca = marca
+        self.modelo = modelo
+        self.color = color
+        self.velocidad = velocidad
+    
+    def acelerar(self):
+        self.velocidad += 10
+        self.imprimir_estado()
+    
+    def frenar(self):
+        self.velocidad -= 5
+        if self.velocidad < 0:
+            self.velocidad = 0
+        self.imprimir_estado()
+    
+    def imprimir_estado(self):
+        print(f"Marca: {self.marca}, Modelo: {self.modelo}, Color: {self.color}, Velocidad: {self.velocidad} km/h")
+
+# Ejemplo de uso
+mi_vehículo = Vehículo("Toyota", "Corolla", "Rojo")
+mi_vehículo.imprimir_estado()
+
+mi_vehículo.acelerar()
+mi_vehículo.frenar()
+mi_vehículo.frenar()
